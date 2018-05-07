@@ -37,7 +37,7 @@
 // There is probably also a point where
 // increasing it too much will reduce performance. You will need to experiment
 // to find the optimal value.
-#define NONCES_PER_TASK 25
+#define NONCES_PER_TASK 20
 
 pthread_mutex_t task_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t task_staging = PTHREAD_COND_INITIALIZER;
@@ -60,6 +60,7 @@ struct thread_info {
 double get_time();
 void *mine(void *arg);
 void print_binary32(uint32_t num);
+uint32_t set_diff(int diff);
 
 /*-----------------------------------------------------------------*/
 /* Function:   get_time()
