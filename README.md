@@ -17,29 +17,30 @@ Report for the original program as well as modified version:
 3. CPU usage during execution (use the `top` command to get a rough estimate of the average CPU usage)
 
 Original:
-1. 0.00s
+1. 0.24s
 2. 722.54 hashes/sec
 3. 10
 
 Modified:
-1. 0.24s
+1. 0.01s
 2. 290234.56 hashes/sec
 3. 7.5
 
 Which version performs better? Is this the result you expected? Why or why not?
+
 The modified version was better, this is not what I expected as the busy waiting is supposed to add to the time since you are waiting for the thread to be finished to continue on. 
 
 ### Nonces Per Task
 
 Experiment with different values for `NONCES_PER_TASK`. What value yields the best performance in terms of hashes per second on your machine?
 
-25 NONCES PER TASK
+1000 NONCES PER TASK
 
 ### Performance I
 
 When evaluating parallel programs, we use speedup and efficiency. Why are these metrics not as useful when measuring the performance of our parallel crytocurrency miner?
 
-These metrics are not as useful because we are using threads to find our hashes. 
+These metrics are not as useful because speedup and efficiency vary 
 
 ### Performance II
 
