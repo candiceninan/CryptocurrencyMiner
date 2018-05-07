@@ -45,4 +45,5 @@ These metrics are not as useful because we are using threads to find our hashes.
 
 Using any of the `kudlick` machines (in our 220 classroom), what is the highest performance you were able to achieve in terms of hashes per second? What configuration did you use (`NONCES_PER_TASK`, number of threads, block data, compiler options)?
 
-252581.97 hashes/sec - 25 NONCES_PER_TASK, 1 thread, 5 Difficulty 
+252581.97 hashes/sec - 25 NONCES_PER_TASK, 1 thread, 5 Difficulty, 'Hello CS 220!!!'
+ 
