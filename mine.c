@@ -34,10 +34,10 @@
 
 #include "sha1.c"
 
-// TODO ten nonces per task is fairly low. There is probably also a point where
+// There is probably also a point where
 // increasing it too much will reduce performance. You will need to experiment
 // to find the optimal value.
-#define NONCES_PER_TASK 15
+#define NONCES_PER_TASK 25
 
 pthread_mutex_t task_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t task_staging = PTHREAD_COND_INITIALIZER;
@@ -114,7 +114,7 @@ void *mine(void *arg) {
             pthread_cond_wait(&task_staging, &task_mutex);
 
         }
-        
+
         pthread_cond_signal(&task_ready);
         pthread_mutex_unlock(&task_mutex);
 
@@ -231,9 +231,7 @@ int main(int argc, char *argv[]) {
     }
 
 
-    // TODO we have hard-coded the number of threads here because the
-    // single-threaded version of the program can only run with one worker
-    // thread a time. We'll need to create the number of threads specified by
+    // We'll need to create the number of threads specified by
     // the user and store them in an array. The thread_info struct contains a
     // pthread_t handle that we will use later to join the threads. Each struct
     // is passed in as the thread routine's argument.
@@ -274,7 +272,7 @@ int main(int argc, char *argv[]) {
             /* When task_pointer is not NULL, the task has not been picked up by
              * a consumer yet. We will wait until a consumer is ready. */
             
-            // TODO we are just busy waiting here. In your multi-threaded
+            // In your multi-threaded
             // version of the program, you should wait on a condition variable.
                 pthread_cond_wait(&task_ready, &task_mutex);
         }
@@ -305,7 +303,7 @@ int main(int argc, char *argv[]) {
 
     double end_time = get_time();
     uint64_t total_inversions = 0;
-    // TODO we should join on all the threads here and add up the total number
+    // join on all the threads here and add up the total number
     // of hashes computed.
     for (threadNumber=0; threadNumber<num_threads; threadNumber++) {
 
