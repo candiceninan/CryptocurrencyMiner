@@ -37,7 +37,7 @@
 // There is probably also a point where
 // increasing it too much will reduce performance. You will need to experiment
 // to find the optimal value.
-#define NONCES_PER_TASK 20
+#define NONCES_PER_TASK 1000
 
 pthread_mutex_t task_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t task_staging = PTHREAD_COND_INITIALIZER;
@@ -109,6 +109,7 @@ void *mine(void *arg) {
     while (true) {
 
         pthread_mutex_lock(&task_mutex);
+
         while (task_pointer == NULL && solution_found == false) {
             /* We will busy wait here until task_pointer is not NULL. */
 
