@@ -14,7 +14,7 @@ Report for the original program as well as modified version:
 
 1. Total program run time
 2. Hashes per second
-3. CPU usage during execution (use the `top` command to get a rough estimate of the average CPU usage)
+3. CPU usage during execution (use the `top` command to get a rough estimate of the average CPU us10ge)
 
 Original:
 1. 0.24s
@@ -28,7 +28,7 @@ Modified:
 
 Which version performs better? Is this the result you expected? Why or why not?
 
-The modified version was better, this is not what I expected as the busy waiting is supposed to add to the time since you are waiting for the thread to be finished to continue on. 
+The modified version was better, this is not what I expected as the busy waiting is supposed to add to the time since you are waiting for the thread to be finished to continue on, and it was said to be faster in class.
 
 ### Nonces Per Task
 
@@ -38,13 +38,12 @@ Experiment with different values for `NONCES_PER_TASK`. What value yields the be
 
 ### Performance I
 
-When evaluating parallel programs, we use speedup and efficiency. Why are these metrics not as useful when measuring the performance of our parallel crytocurrency miner?
+When evaluating parallel programs, we use speedup and efficiency. Why are these metrics not as useful when measuring the performance of our parallel cryptocurrency miner?
 
-These metrics are not as useful because speedup and efficiency vary 
+These metrics are not as useful because speedup and efficiency vary with this cryptocurrency miner program as threads are working on hashes along with difficulty and nonces that add to the elements and do not make speedup as efficient to track and analyze.  
 
 ### Performance II
 
 Using any of the `kudlick` machines (in our 220 classroom), what is the highest performance you were able to achieve in terms of hashes per second? What configuration did you use (`NONCES_PER_TASK`, number of threads, block data, compiler options)?
-
-252581.97 hashes/sec - 25 NONCES_PER_TASK, 1 thread, 5 Difficulty, 'Hello CS 220!!!'
+438545.50 hashes/sec - 1000 NONCES_PER_TASK, 10 thread, 17 Difficulty, 'Hello CS 220!!!'
  
