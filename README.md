@@ -28,7 +28,7 @@ Modified:
 
 Which version performs better? Is this the result you expected? Why or why not?
 
-The modified version was better, this is not what I expected as the busy waiting is supposed to add to the time since you are waiting for the thread to be finished to continue on, and it was said to be faster in class.
+The modified version was better, this is not what I expected as the busy waiting is supposed to add to the time since you are waiting for the thread to be finished to continue on.
 
 ### Nonces Per Task
 
